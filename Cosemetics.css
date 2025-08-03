@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background: #A9A9A9;
+    color: black;
+    scroll-behavior: smooth;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #808080;
+    padding: 1rem 2rem;
+    color: black;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+nav a{
+    margin-right: 1.5rem;
+    color: black;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+nav a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 0%;
+    height: 2px;
+    background-color: #808080;
+    transition: width 0.3s ease-in-out;
+}
+nav a:hover{
+    color: white;
+}
+nav a:hover::after{
+    width: 100%;
+}
+.hero{
+    background-image: url(img/istockphoto-2193641594-2048x2048.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+    color: black; /* Optional: makes text readable */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease forwards;
+    color: white;
+}
+.hero h1::after{
+    background-color: #A9A9A9;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 0%;
+    height: 2px;
+    transition: width 0.3s ease-in-out;
+}
+.hero:hover{
+    background-color: #A9A9A9;
+}
+.hero p{
+    font-size: 1.4rem;
+    animation: fadeInUp 1.2s ease forwards;
+    color: white;
+}
+.about-section{
+    padding: 2rem;
+    background: #808080;
+    text-align: center;
+}
+.about-section h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.8s ease-in;
+}
+.Products{
+    padding: 3rem 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+.Products h2{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    animation: fadeIn 0.8s ease-in-out;
+}
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+.card{
+    background: #808080;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 8px 20px rgba(0,0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+}
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 20px rgba(0,0, 0, 0.15);
+}
+.card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.card:hover img{
+    transform: scale(1.05);
+}
+.card-content{
+    padding: 1rem;
+}
+.card-content h3{
+    margin-bottom: 0.5rem;
+}
+.about, .contact{
+    background: #696969;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 10px; 
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+    animation: fadeIn 1s ease forwards;
+}
+footer{
+    text-align: center;
+    padding: 1rem;
+    background: #696969;
+    color: black;
+    margin-top: 2rem;
+    transition: background 0.3s ease;
+}
+/* Fade In Keyframes */
+@keyframes fadeIn{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+}
+@keyframes fadeInUp{
+    from{
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
